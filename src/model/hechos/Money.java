@@ -1,5 +1,5 @@
 package model.hechos;
-//ERIC GUAPIZIMO
+
 import model.hechos.Currency;
 
 public class Money {
