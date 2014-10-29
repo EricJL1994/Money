@@ -5,10 +5,16 @@ import java.util.Set;
 import model.hechos.Currency;
 
 public class CurrencySet {
-    private final Set<Currency> CurrencySet;
+
+    private final Set<Currency> currencySet;
 
     public CurrencySet() {
-        this.CurrencySet = new HashSet<>();
+        this.currencySet = new HashSet<>();
+    }
+    
+    public void add (Currency currency){
+        currencySet.add(currency);
     }
 
+    
 }
