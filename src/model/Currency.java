@@ -1,4 +1,4 @@
-package moneycalculator;
+package model;
 
 public class Currency {
 
@@ -23,10 +23,5 @@ public class Currency {
     public String getCode() {
         return code;
     }
-    
-    
-    public static void main(String[] args) {
-        System.out.println("Hola");
-    }
-    
+
 }
