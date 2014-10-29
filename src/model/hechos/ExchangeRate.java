@@ -1,5 +1,6 @@
-package model;
+package model.hechos;
 
+import model.hechos.Currency;
 import java.util.Date;
 
 public class ExchangeRate {

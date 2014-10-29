@@ -1,4 +1,6 @@
-package model;
+package model.hechos;
+
+import model.hechos.Currency;
 
 public class Money {
     private final Currency currency;
