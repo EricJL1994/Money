@@ -1,4 +1,4 @@
-package model.hechos;
+package model;
 
 public class Currency {
 

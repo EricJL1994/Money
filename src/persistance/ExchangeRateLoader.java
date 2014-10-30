@@ -1,4 +1,4 @@
-package model;
+package persistance;
 
 public class ExchangeRateLoader {
     
