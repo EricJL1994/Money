@@ -10,10 +10,12 @@ public class CurrencySet {
     public CurrencySet() {
         this.currencySet = new HashSet<>();
     }
+
+    public Set<Currency> getCurrencySet() {
+        return currencySet;
+    }
     
     public void add (Currency currency){
         currencySet.add(currency);
     }
-
-    
 }
