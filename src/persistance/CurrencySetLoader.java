@@ -7,7 +7,7 @@ import model.CurrencySet;
 
 public class CurrencySetLoader {
 
-    public CurrencySet load(CurrencySet currencySet) {
+    public CurrencySet load() {
         return null;
     }
 }

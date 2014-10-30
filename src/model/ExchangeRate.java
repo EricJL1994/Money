@@ -19,7 +19,7 @@ public class ExchangeRate {
         return to;
     }
 
-    public double getValue() {
+    public double getRate() {
         return rate;
     }
 

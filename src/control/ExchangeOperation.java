@@ -1,13 +1,20 @@
 package control;
 
 import model.CurrencySet;
+import model.Exchange;
+import model.ExchangeRate;
+import model.Money;
 import persistance.ExchangeRateLoader;
+import process.Exchanger;
 import ui.ExchangeDialog;
+import ui.MoneyDisplay;
 
 public class ExchangeOperation {
 
     public void execute(CurrencySet currencySet) {
-        new ExchangeRateLoader().load();
-        new ExchangeDialog().execute();
+        Exchange exchange = new ExchangeDialog().execute(currencySet);
+        ExchangeRate exchangeRate = new ExchangeRateLoader().load(exchange.getMoney().getCurrency(), exchange.getCurrency());
+        Money money = new Exchanger().execute(exchangeRate, exchange);
+        new MoneyDisplay().display(money);
     }
 }

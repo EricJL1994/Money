@@ -8,8 +8,7 @@ public class App {
 
     public static void main(String[] args) {
         System.out.println("MOCK");
-        CurrencySet currencySet;
-        currencySet = new CurrencySetLoader().load(new CurrencySet());
+        CurrencySet currencySet = new CurrencySetLoader().load();
         new ExchangeOperation().execute(currencySet);
     }
 }
