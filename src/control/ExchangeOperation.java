@@ -1,7 +1,7 @@
 package control;
 
 import java.io.IOException;
-import model.CurrencySet;
+import model.CurrencyMap;
 import model.Exchange;
 import model.ExchangeRate;
 import model.Money;
@@ -12,8 +12,8 @@ import ui.MoneyDisplay;
 
 public class ExchangeOperation {
 
-    public void execute(CurrencySet currencySet) throws IOException {
-        Exchange exchange = new ExchangeDialog().execute(currencySet);
+    public void execute(CurrencyMap currencyMap) throws IOException {
+        Exchange exchange = new ExchangeDialog().execute(currencyMap);
         ExchangeRate exchangeRate = new ExchangeRateLoader().load(exchange.getMoney().getCurrency(), exchange.getCurrency());
         Money money = new Exchanger().execute(exchangeRate, exchange);
         new MoneyDisplay().display(money);
