@@ -11,21 +11,20 @@ import model.ExchangeRate;
 public class ExchangeRateLoader {
 
     public ExchangeRate load(Currency from, Currency to) throws MalformedURLException, IOException {
-        String loca1 = from.getCode();
-        String loca2 = to.getCode();
-        String urlloca = ("http://www.webservicex.net/CurrencyConvertor.asmx/ConversionRate?FromCurrency=" + loca1 + "&ToCurrency=" + loca2);
-        URL url;
-        url = new URL(urlloca);
+        String currencyInput = from.getCode();
+        String currencyOutput = to.getCode();
+        String urldir = ("http://www.webservicex.net/CurrencyConvertor.asmx/ConversionRate?FromCurrency=" + currencyInput + "&ToCurrency=" + currencyOutput);
+        URL url = new URL(urldir);
         BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
         String line;
-        String cosa = "";
+        String rate = "";
         while ((line = in.readLine()) != null) {
-            cosa = line.substring(line.indexOf(">") + 1);
+            rate = line.substring(line.indexOf(">") + 1);
         }
-        cosa = cosa.substring(0, cosa.indexOf("<"));
-        double doble = Double.parseDouble(cosa);
-        System.out.println(doble);
-        return new ExchangeRate(from, to, doble);//MOCK
+        rate = rate.substring(0, rate.indexOf("<"));
+        double doble = Double.parseDouble(rate);
+        System.out.println(doble);//PARA VER
+        return new ExchangeRate(from, to, doble);
     }
 
 }

@@ -23,5 +23,9 @@ public class Currency {
     public String getCode() {
         return code;
     }
+    public String toString(Currency currency){
+        String currencyString = "Nombre: " + currency.getName()+ "\nCódigo: " + currency.getCode() + "\nSímbolo: " + currency.getSimbol();
+        return currencyString;
+    }
 
 }
