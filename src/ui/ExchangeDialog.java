@@ -17,8 +17,9 @@ public class ExchangeDialog {
         Currency moneyCurrency = readCurrency(currencyMap);
         System.out.println("Introduce el código de la divisa destino");
         Currency currency = readCurrency(currencyMap);
-        
-        return new Exchange(new Money(moneyCurrency, 200), currency);
+        System.out.println("Introduce la cantidad para cambiar");
+        double amount = readAmount();
+        return new Exchange(new Money(moneyCurrency, amount), currency);
     }
     
     private Currency readCurrency(CurrencyMap currencyMap) throws IOException{
@@ -35,7 +36,16 @@ public class ExchangeDialog {
 
     }
     
-    private double readAmount(){
-        return Double.NaN;
+    private double readAmount() throws IOException{
+        InputStreamReader isr = new InputStreamReader(System.in);
+        BufferedReader br = new BufferedReader(isr);
+        double amount = 0;
+        String cadena;
+        do{
+            System.out.print("Cantidad: ");
+            cadena = br.readLine();
+            amount = Double.parseDouble(cadena);
+        }while(amount == Double.NaN);
+        return amount;
     }
 }

@@ -23,10 +23,10 @@ public class Currency {
     public String getCode() {
         return code;
     }
+
     @Override
-    public String toString(){
-        String currencyString = "Nombre: " + this.getName()+ "\nCódigo: " + this.getCode() + "\nSímbolo: " + this.getSimbol();
+    public String toString() {
+        String currencyString = "Nombre: " + this.getName() + "\nCódigo: " + this.getCode() + "\nSímbolo: " + this.getSimbol();
         return currencyString;
     }
-
 }
